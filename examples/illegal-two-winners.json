@@ -1,0 +1,68 @@
+{
+  "classification": "KNOWN_ILLEGAL",
+  "operations": [
+    {
+      "invoke_tick": 1,
+      "return_tick": 2,
+      "command": {
+        "client_id": "setup",
+        "operation_id": "put-1",
+        "kind": "PUT",
+        "key": "counter",
+        "value_base64": "MQ=="
+      },
+      "result": {
+        "status": "OK",
+        "version": 1
+      }
+    },
+    {
+      "invoke_tick": 3,
+      "return_tick": 5,
+      "command": {
+        "client_id": "c1",
+        "operation_id": "cas-1",
+        "kind": "CAS",
+        "key": "counter",
+        "expected_version": 1,
+        "value_base64": "Mg=="
+      },
+      "result": {
+        "status": "OK",
+        "version": 2
+      }
+    },
+    {
+      "invoke_tick": 4,
+      "return_tick": 6,
+      "command": {
+        "client_id": "c2",
+        "operation_id": "cas-1",
+        "kind": "CAS",
+        "key": "counter",
+        "expected_version": 1,
+        "value_base64": "Mw=="
+      },
+      "result": {
+        "status": "OK",
+        "version": 2
+      }
+    },
+    {
+      "invoke_tick": 7,
+      "return_tick": 8,
+      "command": {
+        "client_id": "r1",
+        "operation_id": "read-1",
+        "kind": "READ",
+        "key": "counter"
+      },
+      "result": {
+        "status": "OK",
+        "version": 2,
+        "present": true,
+        "value_base64": "Mg=="
+      }
+    }
+  ]
+}

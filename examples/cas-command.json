@@ -1,0 +1,8 @@
+{
+  "client_id": "contender-1",
+  "operation_id": "cas-1",
+  "kind": "CAS",
+  "key": "counter",
+  "expected_version": 1,
+  "value_base64": "Mg=="
+}

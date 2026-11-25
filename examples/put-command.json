@@ -1,0 +1,7 @@
+{
+  "client_id": "setup",
+  "operation_id": "put-1",
+  "kind": "PUT",
+  "key": "counter",
+  "value_base64": "MQ=="
+}

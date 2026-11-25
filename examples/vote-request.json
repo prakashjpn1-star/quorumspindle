@@ -1,0 +1,8 @@
+{
+  "cluster_id": "cluster-demo",
+  "rpc_id": "vote-term-3-a-b",
+  "term": 3,
+  "candidate_id": "node-a",
+  "last_log_index": 8,
+  "last_log_term": 2
+}

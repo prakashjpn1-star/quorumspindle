@@ -1,0 +1,6 @@
+{
+  "client_id": "reader-1",
+  "operation_id": "read-1",
+  "kind": "READ",
+  "key": "counter"
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/prakashjpn1-star/quorumspindle/schemas/snapshot-manifest.schema.json",
+  "title": "Durable state-machine snapshot manifest",
+  "type": "object",
+  "properties": {
+    "cluster_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "node_id": {
+      "enum": [
+        "node-a",
+        "node-b",
+        "node-c"
+      ]
+    },
+    "format_version": {
+      "const": 1
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "last_included_index": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "last_included_term": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "state_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "request_results_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "payload_bytes": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "payload_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "required": [
+    "cluster_id",
+    "node_id",
+    "format_version",
+    "snapshot_id",
+    "last_included_index",
+    "last_included_term",
+    "state_digest",
+    "request_results_digest",
+    "payload_bytes",
+    "payload_digest"
+  ],
+  "additionalProperties": false
+}
